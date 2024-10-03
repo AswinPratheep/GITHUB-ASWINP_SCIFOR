@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-around;
+        border: 2px solid blue;
+        height: 100vh;
+    }
+    .items{
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 100px;
+        order: 2;
+        align-self: flex-start;
+        background: lightblue;
+        padding: 20px;
+        margin: 10px;
+        color: black;
+        font-size: 1.5em;
+        text-align: center;
+        align-self: flex-start;
+        order: 2;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="items">one</div>
+        <div class="items">two</div>
+        <div class="items">three</div>
+        <div class="items">four</div>
+        
+    
+    </div>
+</body>
+</html>
