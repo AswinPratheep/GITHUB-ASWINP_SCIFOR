@@ -1,0 +1,15 @@
+#form{
+    background: skyblue;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 16px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+h4
+{
+    text-align: center;
+}
+label{
+    display: block;
+}
