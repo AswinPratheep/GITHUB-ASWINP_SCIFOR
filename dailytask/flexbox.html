@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex box</title>
+
+    <style>
+        *{
+            background-color: rgb(231, 226, 238);
+        }
+           .container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          border: 1.5px solid rgb(3, 217, 255);
+          border-radius: 3%;
+          height: 100vh;
+          padding-top: 5%;
+          background-color: rgb(22, 171, 216);
+      }
+      .item{
+          align-self: flex-start;
+          align-content: flex-start;
+          flex-grow: 5;
+          flex-shrink: 1;
+          flex-basis: 100px;
+          order: 2;
+          background-color: rgb(211, 241, 241);
+          padding: 20px;
+          margin: 12px;
+          border: 3.2px solid rgb(207, 253, 255);
+          border-radius: 8%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="item">grapes1</div>
+      <div class="item">orange</div>
+      <div class="item">mango</div>
+      <div class="item">grapes</div>
+      <div class="item">mango</div>
+      <div class="item">grapes1</div>
+      <div class="item">orange</div>
+      <div class="item">mango</div>
+      <div class="item">grapes</div>
+      <div class="item">mango</div>
+    </div>
+  </body>
+</html>

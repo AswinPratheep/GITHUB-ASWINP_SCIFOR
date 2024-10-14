@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fbfbfc;
+        }
+
+        .container {
+            border: 3px solid black;
+            padding: 20px;
+            background-color: white;
+            width: 300px;
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        .container label {
+            display: inline-block;
+            width: 65px;
+        }
+
+        .container input {
+            margin-bottom: 10px;
+        }
+
+        .container a {
+            display: block;
+            width: 20%;
+            padding: 4x;
+            background-color: #256f29;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 107px;
+            margin-top: 10px;
+            font-size: small;
+            align-items: center;
+        }
+
+        .container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form class="container">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required><br>
+        </div>
+
+        <div>
+            <label>Gender</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </div><br>
+
+        <div>
+            <label>Skills</label>
+            <input type="checkbox" id="html" name="skills" value="html">
+            <label for="html">HTML</label>
+            <input type="checkbox" id="css" name="skills" value="css">
+            <label for="css">CSS</label><br><br>
+            <button class="button"> Click Here</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
