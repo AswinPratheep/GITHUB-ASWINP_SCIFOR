@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      form {
+        background: rgba(14, 18, 137, 0.15);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        width: 300px;
+        text-align: center;
+      }
+
+      form h2 {
+        color: rgb(0, 0, 0);
+        font-weight: bolder;
+      }
+
+      form input {
+        width: 45%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      form button {
+        width: 25%;
+        padding: 10px;
+        background-color: #f9fd02;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      form button:hover {
+        background-color: #eff320;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="form-container">
+      <form>
+        <h2>LOGIN</h2>
+        &nbsp;
+        <label for="username">Username &nbsp;</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password &nbsp;</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Login </button>
+      </form>
+    </div>
+  </body>
+</html>

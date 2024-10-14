@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #dfdada;
+        }
+
+        th {
+            background-color: #e8e9f3;
+        }
+
+        tfoot td {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">Product List</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price (INR)</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Product A</td>
+                <td>500</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Product B</td>
+                <td>750</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Product C</td>
+                <td>300</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Product D</td>
+                <td>1200</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total Price</td>
+                <td>3550</td> 
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>
