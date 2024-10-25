@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+  <style>
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Registration Form</h2>
+  <form>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" placeholder="enter your first name" name="fname" minlength="5" maxlength="20" required >
+    
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" placeholder="enter your second name" name="lname" minlength="3" maxlength="10" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="enter your email id" name="email" required >
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="enter your password" name="password" minlength="8" required >
+    
+    <input type="submit" value="Submit" class="button custom">
+</form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
+<script>
+  $(document).foundation();
+</script>
+</body>
+</html>
