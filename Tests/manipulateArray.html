@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulate Array</title>
+</head>
+<body>
+
+<h1>Array Manipulation</h1>
+
+<script>
+function manipulateArray(arr) {
+    // Add a new string "VOLVO" to the end of the array
+    arr.push("VOLVO");
+
+    // Iterate over each element and convert to uppercase
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].toUpperCase();
+    }
+
+    // Return the modified array
+    return arr;
+}
+
+// Example usage
+let cars = ["toyota", "honda", "ford"];
+let result = manipulateArray(cars);
+console.log(result);
+</script>
+
+</body>
+</html>

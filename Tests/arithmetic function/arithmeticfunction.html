@@ -50,13 +50,13 @@
 
     <script>
         function performOperation() {
-            // Get input values
+            
             const num1 = parseFloat(document.getElementById('num1').value);
             const num2 = parseFloat(document.getElementById('num2').value);
             const operation = document.getElementById('operation').value;
             let result;
 
-            // Perform operation
+           
             if (isNaN(num1) || isNaN(num2)) {
                 result = "Please enter valid numbers.";
             } else {
@@ -82,7 +82,7 @@
                 }
             }
 
-            // Display result
+           
             document.getElementById('result').textContent = `Result: ${result}`;
         }
     </script>
