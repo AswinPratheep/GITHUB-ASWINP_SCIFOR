@@ -1,0 +1,59 @@
+/* src/App.css */
+
+/* Global Styles */
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Container Style */
+.container {
+  width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Heading Style */
+.heading {
+  color: #4CAF50;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Paragraph Style */
+.paragraph {
+  color: #555;
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 1.8;
+  margin: 0 10px;
+}
+
+/* List Style */
+.list {
+  list-style-type: square;
+  padding-left: 20px;
+  color: #333;
+}
+
+/* Button Style */
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
