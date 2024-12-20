@@ -23,18 +23,17 @@
 
     <script>
         function categorizeNumbers() {
-            // Get input from the user
+            
             const input = document.getElementById("numberInput").value;
             
-            // Split the input into an array of numbers
             const numbers = input.split(",").map(num => parseFloat(num.trim()));
             
-            // Arrays to hold positive, negative, and zero numbers
+            
             let positives = [];
             let negatives = [];
             let zeros = [];
 
-            // Loop through each number and categorize
+           
             numbers.forEach(num => {
                 if (num > 0) {
                     positives.push(num);
@@ -45,7 +44,6 @@
                 }
             });
 
-            // Display results
             document.getElementById("positives").textContent = positives.join(", ");
             document.getElementById("negatives").textContent = negatives.join(", ");
             document.getElementById("zeros").textContent = zeros.join(", ");
