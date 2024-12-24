@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Categorizer</title>
+</head>
+<body>
+
+    <h1>Number Categorizer</h1>
+    <p>Enter a series of numbers separated by commas:</p>
+    
+    <!-- Input field for numbers -->
+    <input type="text" id="numberInput" placeholder="e.g., 10, -5, 0, 3, -2">
+    <button onclick="categorizeNumbers()">Categorize</button>
+
+    <h2>Results:</h2>
+    <div id="results">
+        <p><strong>Positive Numbers:</strong> <span id="positives"></span></p>
+        <p><strong>Negative Numbers:</strong> <span id="negatives"></span></p>
+        <p><strong>Zeros:</strong> <span id="zeros"></span></p>
+    </div>
+
+    <script>
+        function categorizeNumbers() {
+            
+            const input = document.getElementById("numberInput").value;
+            
+            const numbers = input.split(",").map(num => parseFloat(num.trim()));
+            
+            
+            let positives = [];
+            let negatives = [];
+            let zeros = [];
+
+           
+            numbers.forEach(num => {
+                if (num > 0) {
+                    positives.push(num);
+                } else if (num < 0) {
+                    negatives.push(num);
+                } else if (num === 0) {
+                    zeros.push(num);
+                }
+            });
+
+            document.getElementById("positives").textContent = positives.join(", ");
+            document.getElementById("negatives").textContent = negatives.join(", ");
+            document.getElementById("zeros").textContent = zeros.join(", ");
+        }
+    </script>
+
+</body>
+</html>

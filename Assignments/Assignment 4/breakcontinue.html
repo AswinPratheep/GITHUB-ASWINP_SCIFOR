@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break and Continue Example</title>
+</head>
+<body>
+
+    <h1>Break and Continue Statements in JavaScript</h1>
+
+    <button onclick="showBreakExample()">Run Break Example</button>
+    <button onclick="showContinueExample()">Run Continue Example</button>
+
+    <h2>Output:</h2>
+    <div id="output"></div>
+
+    <script>
+        function showBreakExample() {
+            let output = "Using break statement:<br>";
+            for (let i = 1; i <= 10; i++) {
+                if (i === 5) {
+                    output += "Breaks at i = " + i + "<br>";
+                    break;
+                }
+                output += i + "<br>";
+            }
+            document.getElementById("output").innerHTML = output;
+        }
+
+        function showContinueExample() {
+            let output = "Using continue statement:<br>";
+            for (let i = 1; i <= 10; i++) {
+                if (i === 5) {
+                    output += "Skips i = " + i + "<br>";
+                    continue;
+                }
+                output += i + "<br>";
+            }
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+
+</body>
+</html>
