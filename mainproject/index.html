@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Da Vinci Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: #333;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .hero {
+            background: url('J17wICFffUtFrH4317FHtE-4096x4096.webp') no-repeat center center/cover;
+            height: 600px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+        }
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .art-card img {
+            height: 300px;
+            object-fit: cover;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Da Vinci Gallery</a>
+                <!-- Toggle button for mobile views -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about1.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="art.html">Artworks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="museum.html">Museums</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to Da Vinci Gallery</h1>
+            <p>Experience timeless art in a virtual space</p>
+        </div>
+    </section>
+
+    <!-- React Container for Featured Artworks -->
+    <section class="container mt-5" id="artworks">
+        <h2 class="section-title text-center">Featured Artworks</h2>
+        <div id="artGallery"></div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Da Vinci Gallery. All rights reserved.</p>
+    </footer>
+
+    <!-- React Script to Render Artworks -->
+    <script type="text/babel">
+        function ArtCard({ image, title, description }) {
+            return (
+                <div className="col-md-4">
+                    <div className="card art-card">
+                        <img src={image} alt={title} />
+                        <div className="card-body">
+                            <h5 className="card-title">{title}</h5>
+                            <p className="card-text">{description}</p>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        function ArtGallery() {
+            const artworks = [
+                {
+                    image: 'unnamed.jpg',
+                    title: 'Starry Night',
+                    description: 'A masterpiece by Vincent van Gogh, showcasing a mesmerizing night sky.'
+                },
+                {
+                    image: 'Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg',
+                    title: 'Mona Lisa',
+                    description: 'Leonardo da Vinci\'s iconic portrait, known for its mysterious expression.'
+                },
+                {
+                    image: 'the-scream.jpg',
+                    title: 'The Scream',
+                    description: 'Edvard Munch\'s evocative painting capturing raw emotion and anxiety.'
+                }
+            ];
+
+            return (
+                <div className="row">
+                    {artworks.map((art, index) => (
+                        <ArtCard 
+                            key={index} 
+                            image={art.image} 
+                            title={art.title} 
+                            description={art.description} 
+                        />
+                    ))}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('artGallery')).render(<ArtGallery />);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
