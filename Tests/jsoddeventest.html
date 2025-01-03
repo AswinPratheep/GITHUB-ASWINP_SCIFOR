@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even Checker</title>
+    <style>
+        #container {
+            margin-top: 20px;
+        }
+        #output {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Odd or Even Number Checker</h1>
+    <div id="container">
+        <label for="numberInput">Enter a number:</label>
+        <input type="number" id="numberInput" step="any">
+        <button onclick="checkInputNumber()">Check</button>
+    </div>
+    <div id="output"></div>
+
+    <script>
+        // Function to check if a number is odd or even
+        function checkOddEven(number) {
+            if (!Number.isInteger(number)) {
+                return number + ' is not an integer.';
+            }
+            return number + (number % 2 === 0 ? ' is Even.' : ' is Odd.');
+        }
+
+        // Function to check the number from input
+        function checkInputNumber() {
+            let input = document.getElementById('numberInput').value;
+            let result;
+            if (input === '') {
+                result = 'Please enter a number.';
+            } else {
+                let parsedNumber = parseFloat(input);
+                result = checkOddEven(parsedNumber);
+            }
+            document.getElementById('output').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
