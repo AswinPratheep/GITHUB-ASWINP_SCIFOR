@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { createContext, useContext, useState } = React;
+
+        const TodoContext = createContext();
+
+        function TodoProvider({ children }) {
+            const [todos, setTodos] = useState([]);
+
+            const addTodo = (text) => {
+                if (text.trim()) {
+                    setTodos([...todos, text]);
+                }
+            };
+
+            const removeTodo = (index) => {
+                setTodos(todos.filter((_, i) => i !== index));
+            };
+
+            return (
+                <TodoContext.Provider value={{ todos, addTodo, removeTodo }}>
+                    {children}
+                </TodoContext.Provider>
+            );
+        }
+
+        function TodoApp() {
+            const [todo, setTodo] = useState("");
+            const { todos, addTodo, removeTodo } = useContext(TodoContext);
+
+            return (
+                <div style={{ textAlign: "center", marginTop: "50px" }}>
+                    <h1>Context API To-Do App</h1>
+                    <input 
+                        type="text" 
+                        value={todo} 
+                        onChange={(e) => setTodo(e.target.value)}
+                        placeholder="Enter a task"
+                        style={{ padding: "8px", fontSize: "16px", marginRight: "10px" }}
+                    />
+                    <button onClick={() => { addTodo(todo); setTodo(""); }} style={{ padding: "8px", fontSize: "16px" }}>
+                        Add Task
+                    </button>
+                    <ul style={{ listStyle: "none", padding: 0 }}>
+                        {todos.map((task, index) => (
+                            <li key={index} style={{ margin: "10px 0" }}>
+                                {task} 
+                                <button 
+                                    onClick={() => removeTodo(index)}
+                                    style={{ marginLeft: "10px", padding: "5px", fontSize: "14px", backgroundColor: "red", color: "white", border: "none" }}
+                                >
+                                    Delete
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <TodoProvider>
+                <TodoApp />
+            </TodoProvider>,
+            document.getElementById("root")
+        );
+    </script>
+</body>
+</html>
