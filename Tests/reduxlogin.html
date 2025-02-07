@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/redux@4.1.0/dist/redux.min.js"></script>
+    <script src="https://unpkg.com/react-redux@7.2.4/dist/react-redux.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4; 
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: white; 
+            border-radius: 5px; 
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+            margin-top: 50px; 
+        }
+
+        input, button { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+        }
+
+        button { 
+            background-color: blue; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        
+        }
+        button:hover { 
+            background-color: rgb(58, 58, 255); 
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { createStore } = Redux;
+        const { Provider, useDispatch, useSelector } = ReactRedux;
+        const { useState } = React;
+
+        function authReducer(state = { isAuthenticated: false, user: {} }, action) {
+            switch (action.type) {
+                case 'LOGIN':
+                    return { isAuthenticated: true, user: action.payload };
+                case 'LOGOUT':
+                    return { isAuthenticated: false, user: {} };
+                default:
+                    return state;
+            }
+        }
+
+        const store = createStore(authReducer);
+
+        function Login() {
+            const dispatch = useDispatch();
+            const isAuthenticated = useSelector(state => state.isAuthenticated);
+            const user = useSelector(state => state.user);
+            const [form, setForm] = React.useState({ name: "", email: "", password: "" });
+
+            const handleChange = (e) => {
+                setForm({ ...form, [e.target.name]: e.target.value });
+            };
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                dispatch({ type: 'LOGIN', payload: form });
+            };
+
+    return (
+        <div className="container">
+            {isAuthenticated ? (
+                <React.Fragment>
+                    <h2>Welcome, {user.name}!</h2>
+                    <p>Email: {user.email}</p>
+                    <button onClick={() => dispatch({ type: 'LOGOUT' })}>Logout</button>
+                </React.Fragment>
+            ) : (
+                <form onSubmit={handleSubmit}>
+                    <h2>Login</h2>
+                    <input type="text" name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
+                    <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required />
+                    <input type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} required />
+                    <button type="submit">Login</button>
+                </form>
+            )}
+        </div>
+    );
+}
+
+
+        function App() {
+            return (
+                <Provider store={store}>
+                    <Login />
+                </Provider>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+</body>
+</html>
